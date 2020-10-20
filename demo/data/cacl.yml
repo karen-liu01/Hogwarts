@@ -1,0 +1,66 @@
+add:
+  datas_float:
+    - [0, 0.2, 0.2]
+    - [0, -1.01, -1.01]
+    - [0.5, 0.66, 1.16]
+    - [-0.5, -0.66, -1.16]
+    - [-100, 100, 0]
+    - [1.0, -1.0, 0]
+    - [100.011, -1, 99.011]
+    - [-100.011, 1, -99.011]
+  ids_float:
+    - 'case_zero_float'
+    - 'case_zero_minus_float'
+    - 'case_float'
+    - 'case_minus_float'
+    - 'case_result0_float'
+    - 'case_result0_float2'
+    - 'case_result_gt0'
+    - 'case_result_lt0'
+  datas_int:
+    - [ 0, 0, 0 ]
+    - [ 1, 0, 1 ]
+    - [ -100, 0, -100 ]
+    - [ 1, 1, 2 ]
+    - [ 100, 200, 300 ]
+    - [ -100, -200, -300 ]
+    - [ -100, 100, 0 ]
+    - [ 'a', '0', 0 ]
+    - [ '', 0, 0 ]
+    - [ 1, '', 0 ]
+  ids_int:
+    - 'case_zero_all_zero'
+    - 'case_zero_int'
+    - 'case_zero_minus_int'
+    - 'case_int'
+    - 'case_bigint'
+    - 'case_minus_bigint'
+    - 'case_result0_int'
+    - 'case_not_num'
+    - 'case_empty_1'
+    - 'case_empty_2'
+div:
+  datas_int:
+    - [0, 1, 0]
+    - [1, 1, 1]
+    - [4, 2, 2]
+  ids_int:
+    - 'case_01'
+    - 'case_int1'
+    - 'case_int2'
+  datas_zero:
+    - [0, 0, 0]
+    - [1, 0, 0]
+  ids_zero:
+    - 'case_00'
+    - 'case_10'
+  datas_float:
+    - [0.1, 1, 0.1]
+    - [-1, 2, -0.5]
+    - [10, -3, -3.33]
+    - [-2, -4, 0.5]
+  ids_float:
+    - 'case_float'
+    - 'case_mixture1'
+    - 'case_mixture2'
+    - 'case_all_minus'
