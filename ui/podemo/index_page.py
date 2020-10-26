@@ -7,7 +7,7 @@ from ui.podemo.register_page import RegisterPage
 
 class IndexPage:
     def __init__(self):
-        self.driver = webdriver.Chrome("/Users/jiazhaopu/Downloads/chromedriver.exe")
+        self.driver = webdriver.Chrome("/Users/jiazhaopu/Downloads/chromedriver")
         self.driver.implicitly_wait(5)
         self.driver.get("https://work.weixin.qq.com/")
 
