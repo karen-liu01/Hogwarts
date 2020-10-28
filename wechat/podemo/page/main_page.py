@@ -1,9 +1,9 @@
 # data: 2020/10/28
 from time import sleep
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 
 from wechat.podemo.page.add_member_page import AddMemberPage
 from wechat.podemo.page.base_page import BasePage
@@ -16,10 +16,24 @@ class MainPage(BasePage):
     def goto_add_members(self):
         # self.driver.get("https://work.weixin.qq.com/wework_admin/frame ")
         self.base_url = "https://work.weixin.qq.com/wework_admin/frame"
-
         # 点击添加联系人按钮
         # self.driver.find_element(By.XPATH, '//*[@class="index_service_cnt js_service_list"]/a[1]/div[1]').click()
-        self.find(By.XPATH, '//*[@class="index_service_cnt js_service_list"]/a[1]/div[1]').click()
+        # self.find(By.XPATH, '//*[@class="index_service_cnt js_service_list"]/a[1]/div[1]').click()
+        # 显示等待逻辑  返回的元素指定了类型，才可以调用click方法
+        locator = (By.XPATH, '//*[@class="index_service_cnt js_service_list"]/a[1]/div[1]')
+        # element:WebElement = WebDriverWait(self.driver,10).until(expected_conditions.element_to_be_clickable(locator))
+        element = self.wait_until_click(locator)
+        element.click()
 
+        # 自己定义一个显示等待函数，实现等页面跳转后进行下一步操作
+        # def wait_for_next(x:WebDriver):
+        #     try:
+        #         # 将传进来的locator解包，因为locator中有两个元素
+        #         x.find_element(*locator).click()
+        #         return x.find_element(By.ID, "username")
+        #     except:
+        #         return False
+        # # x不需要传值，会将webdriver传递进去
+        # WebDriverWait(self.driver,10).until(wait_for_next)
         # 跳回页面必须加括号
         return AddMemberPage(self.driver)
