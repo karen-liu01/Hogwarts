@@ -1,8 +1,14 @@
+# yaml加-是list，不加是字典
+#   既可以自己写case，也可以调用框架中本身的方法
 test_a:
-    - [111]
-test_b:
-  - [222]
+    - hello.a: []
+    - print: ["abcde"]
+    - re.search: [".*", "abcd"]
+    - save: tmp_value
+    - print: [$(tmp_value)]
+#test_b:
+#  - test: [11]
 demo:
-  - [333]
-test_c:
-  - hello.a:[444]
+  - demo: []
+#test_c:
+#  - print: [444]
